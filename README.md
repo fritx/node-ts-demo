@@ -12,14 +12,16 @@
 
 - ts sourcemap support
 
-### Todo
-
-- definition for dist files
-
 **[koa]**
 
 - koa, koa-helmet, koa-ratelimit, ioredis, koa error
 - nodemon, koa-router, koa-body, api error
+- dotenv-cli, redis options, const, koa-session, koa middlewares
+- user/captcha login
+
+### Todo
+
+- definition for dist files
 
 ```sh
 # Node version
@@ -38,16 +40,19 @@ node dist/hello
 ```plain
 - Dependencies
   - typescript 3.5.2
-  - tslint 5.18.0
+  - typescriot-eslint 1.11.0
+  - eslint 6.0.1
+  - prettier 1.18.2
 
 - npmrc
   - packafge-lock=false
 
 - tsconfig
-  - `compilerOptions.outDir='.'`
-  - `include='**/*.ts'`
+  - `compilerOptions.outDir='./dist'`
+  - `include='src/**/*.ts'`
 
 - VS-Code Extensions
-  - TSLint (deprecated) 1.0.43
+  - Prettier 1.9.0
+  - ESLint 1.9.0
   - DotENV 1.0.1
 ```

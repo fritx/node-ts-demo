@@ -20,6 +20,10 @@
     "skipDefaultLibCheck": true,
     "inlineSourceMap": true,
     "importHelpers": true,
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      "dist": ["./dist/"], // This mapping is relative to "baseUrl"
+    },
   },
   "include": [
     "src/**/*.ts",

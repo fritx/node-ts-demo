@@ -3,6 +3,7 @@ import * as helmet from 'koa-helmet'
 import * as ratelimit from 'koa-ratelimit'
 import { redis } from './redis'
 import { routes } from './routes'
+import { appSession } from './app-session'
 
 let port = process.env.PORT || 3000
 let app = new Koa()
@@ -32,6 +33,8 @@ app.use(
 )
 
 app.use(helmet())
+
+appSession(app)
 
 app.use(routes)
 

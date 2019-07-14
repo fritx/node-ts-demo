@@ -1,5 +1,6 @@
 import * as Router from 'koa-router'
-import * as koaBody from 'koa-body'
+import { koaBody } from './koa-middlewares'
+import { routesMain } from './routes-main'
 
 let router = new Router()
 let apiRouter = new Router()
@@ -25,12 +26,14 @@ apiRouter.get('/get', async ctx => {
   }
 })
 
-apiRouter.post('/post', koaBody(), async ctx => {
+apiRouter.post('/post', koaBody, async ctx => {
   ctx.body = {
     query: ctx.query,
     body: ctx.request.body,
   }
 })
+
+routesMain({ router, apiRouter })
 
 router.use('/api', apiRouter.routes())
 
